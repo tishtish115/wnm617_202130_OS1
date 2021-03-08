@@ -127,9 +127,11 @@ a:hover {
     border-image: initial;
   }
 
-.img
-width: 350px
-height:350px
+.img{
+ width: 350px;
+ height:350px;
+ align-items: center;
+}
 
 
 /* FORM ELEMENTS */
