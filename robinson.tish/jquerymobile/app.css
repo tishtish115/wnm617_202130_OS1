@@ -106,7 +106,9 @@ a:hover {
 
 
 
-
+.img
+width: 300px
+height:300px
 
 
 /* FORM ELEMENTS */
@@ -124,7 +126,7 @@ a:hover {
     border: 1px solid #d83939;
     margin: 0;
     padding: 0.5em 1em;
-    border-radius: 3em;
+    border-radius: 5em;
     outline: 0;
     font:inherit;
 }
