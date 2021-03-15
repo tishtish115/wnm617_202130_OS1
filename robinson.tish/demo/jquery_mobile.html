@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+
+   <base href="/aau/wnm617/cline.hamilton/">
+
+   <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+   <link rel="stylesheet" href="css/app.css">
+
+   <script src="lib/js/jquery-2.2.4.min.js"></script>
+
+   <script src="js/app.js"></script>
+
+   <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+   <section data-role="page" id="page1">
+      <header data-role="header">
+         <h1>Page 1</h1>
+      </header>
+      <div data-role="main">
+         This is the Page 1 body.
+         <p>
+            <a href="#page2">Page 2</a>
+         </p>
+         <p>
+            <a href="#page3">Page 3</a>
+         </p>
+      </div>
+      <footer data-role="footer">
+         <h1>Footer</h1>
+      </footer>
+   </section>
+
+   <section data-role="page" id="page2">
+      <header data-role="header">
+         <h1>Page 2</h1>
+      </header>
+      <div data-role="main">
+         This is the Page 2 body.
+         <p>
+            <a href="#page1">Page 1</a>
+         </p>
+         <p>
+            <a href="#page3">Page 3</a>
+         </p>
+      </div>
+      <footer data-role="footer">
+         <h1>Footer</h1>
+      </footer>
+   </section>
+
+   <section data-role="page" id="page3">
+      <header data-role="header">
+         <h1>Page 3</h1>
+
+         <a href="#" data-rel="back">Back</a>
+      </header>
+      <div data-role="main">
+         This is the Page 3 body.
+      </div>
+      <footer data-role="footer">
+         <h1>Footer</h1>
+      </footer>
+   </section>
+   
+</body>
+</html>
