@@ -4,7 +4,7 @@
    <!-- <base href="http://anotherluvdesign.site/aau/wnm617_02/robinson.tish/index.html"> -->
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Animal Tracker</title>
+   <title>Butterfly Tracker</title>
 
    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
    <link rel="stylesheet" href="css/app.css">
@@ -18,8 +18,13 @@
 </head>
 <body>
 
-
+<!--BREAKDOWN EVERYTHING BY EACH SECTION-->
+   <!--SIGN IN PAGE-->
    <section data-role="page" id="signin-page">
+   <header data-role="header" role="banner" class="ui-header ui-bar-inheit">
+      <h1 class="ui-title" role="heading" aria-level="1">
+        <!--<h1>Butterfly Tracker</h1>-->
+   </header>
  <img src="img/butterflyapplogo.svg" class="butterfly.logo" >         <div class="flex-stretch"></div>
          <div class="flex-none">
             <form class="form" id="signin-form" data-ajax="false" style="padding:1em">
@@ -34,6 +39,10 @@
                <div class="form-control">
                   <input type="submit" class="form-button" value="Sign In" data-role="none">
                </div>
+            <div class="form-control signin-alt">
+               Don't have an account?
+            <a href="#signup-page">Sign Up</a>
+         </div>
             </form>
          </div>
       </div>
@@ -41,16 +50,44 @@
 
 
    <section data-role="page" id="recent-page">
+    <header data-role="header" role="banner" class="ui-header ui-bar-inheit">
+      <h1 class="ui-title" role="heading" aria-level="1">
+         <h1>Map</h1>
+   </header>
       <div data-role="main">
-         MAP!
-   <!--<img src="img/map.png" class="atl" >-->
+        <!-- MAP!-->
+   <img src="img/map.png" class="atl" >
       </div>
-      <footer data-role="footer" data-template="#footer-template"></footer>
+      <footer data-role="footer" data-template="#footer-template">
+
+   <ul class>
+     <div class="w3-container">
+      <h3>Footer</h3>
+      <li>
+         <a href="#recent-page" class="ui-link">
+         <div class="nav-label">Map</div>
+      </a>
+   </li>
+   <li>
+        <a href="#list-page" class="ui-link">
+         <div class="nav-label">List</div>
+      </a>
+   </li>
+    <li>
+        <a href="#user-profile-page" class="ui-link">
+         <div class="nav-label">Profile</div>
+      </a>
+   </li>
+</ul>
+      </footer>
    </section>
 
 
+
+
    <section data-role="page" id="list-page">
-      <header data-role="header">
+      <header data-role="header" role="banner" class="ui-header ui-bar-inheit">
+      <h1 class="ui-title" role="heading" aria-level="1">
          <h1>Butterlfly List</h1>
          <ul>
             <li class="flex-stretch"></li>

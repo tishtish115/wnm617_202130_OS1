@@ -29,7 +29,9 @@ body {
    font-family:var(--font-sans);
 }
 
-h1,
+h1{
+  background-color:#e88024;
+}
 h2,
 h3,
 h4,
@@ -65,7 +67,7 @@ a:hover {
 .display-inline-flex { display:inline-flex; }
 .display-inline-block { display:inline-block; }
 
-.flex-stretch { flex:1 1 auto; }
+.flex-stretch { inherit; }
 .flex-none { flex:none; }
 
 .flex-align-center { align-items:center; }
@@ -97,11 +99,13 @@ a:hover {
    overflow:hidden;
 }
 .element.style{
+  padding:0.7em;
   width: 100vw;
   height: 100vw;
 }
 
 .ui-header .ui-title {
+   background-color: #e88024;
    position:absolute;
    top:0em;
    left:0;
@@ -144,8 +148,8 @@ a:hover {
   }
 
 .img{
- width: 350px;
- height:350px;
+ width: 250px;
+ height:250px;
  align-items: center;
 }
 >>>>>>> cbad08becac3fea675e5a53d5d818e04c431e508:robinson.tish/jquerymobile/app.css
@@ -156,7 +160,7 @@ a:hover {
     margin: 1em 0;
 }
 .ui-mobile .form-label {
-    margin: 1em 0;
+    margin: inherit;
     font-size: 0.7em;
     color: var(--color-neutral-medium);
 }
