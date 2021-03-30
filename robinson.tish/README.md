@@ -5,7 +5,7 @@
 ### Important Links
 
 - http://anotherluvdesign.site
-- http://anotherluvdesign.site/aau/wnm617/index.html
+- http://anotherluvdesign.site/aau/wnm617/robinson.tish
 - http://anotherluvdesign.site/aau/wnm617/robinson.tish/initializr/index.html
 
 ### Git Notes
