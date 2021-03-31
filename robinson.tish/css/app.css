@@ -105,7 +105,7 @@ a:hover {
 }
 
 .ui-header .ui-title {
-   background-color: #e88024;
+   background-color: #cb6a12;
    position:absolute;
    top:0em;
    left:0;
@@ -177,7 +177,7 @@ a:hover {
 .form-button {
     margin: 0;
     padding: 0.5em 1em;
-    border-radius: 0.3em;
+    border-radius: 3em;
     border-width:0;
     background-color: #dc1717;
     outline: 0;
