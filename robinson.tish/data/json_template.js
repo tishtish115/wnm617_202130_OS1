@@ -36,7 +36,7 @@
 
 
 
-// ANIMALS DATA
+// ANIMAL DATA
 [
   '{{repeat(50)}}',
   {
@@ -48,9 +48,9 @@
     type: '{{random("dog","buterfly","horse")}}',
     breed: function(tags) {
       var breeds = {
-        dog:["labrador","pitbull","dachsund"],
+        dog:["yokshire terrier","german sheperd","labrador retriever"],
         buterfly:["monarch","black swallowtail","Limenitis arthemis"],
-        horse:["shetland","andalusian","unicorn"]
+        horse:["orlov trotter","andalusian","campolina"]
       };
       var chosen_type = breeds[this.type];
       var chosen_index = tags.integer(0,chosen_type.length-1);
@@ -75,8 +75,9 @@
     id: '{{index(1)}}',
     animal_id: '{{integer(1,50)}}',
     
-    lat: '{{floating(37.800351, 37.701135)}}',
-    lng: '{{floating(-122.511433, -122.386382)}}',
+    //-1.281226, 36.873439
+    lat: '{{floating( -1.281226, 36)}}',
+    lng: '{{floating(36.873439, -1)}}',
     
     description: '{{lorem(3,"sentences")}}',
     photo: 'https://via.placeholder.com/400/',
