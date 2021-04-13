@@ -76,6 +76,13 @@ a:hover {
 
 
 
+.overscroll {
+  overflow:auto;
+  height:100%;
+  width:100%;
+}
+.no-touch { pointer-events:none; }
+.do-touch { pointer-events:all; }
 
 
 
@@ -153,6 +160,42 @@ a:hover {
  align-items: center;
 }
 >>>>>>> cbad08becac3fea675e5a53d5d818e04c431e508:robinson.tish/jquerymobile/app.css
+
+
+/* Navigation Elements */
+.header a,
+[data-role="header"] a,
+[data-role="footer"] a {
+  display:block;
+  margin:0;
+}
+
+.header ul,
+[data-role="header"] ul,
+[data-role="footer"] ul {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  position:relative;
+}
+[data-role="footer"] li {
+  text-align:center;
+  flex: 1 1 auto;
+}
+
+.header a,
+[data-role="header"] a {
+  padding: 0 1em;
+}
+
+
+.header {
+  width:100%;
+   height: var(--header-height);
+   line-height: var(--header-height);
+}
+
 
 
 /* FORM ELEMENTS */
