@@ -1,5 +1,17 @@
 
-const RecentPage = async () => {}
+const RecentPage = async () => {
+	await checkDAta(()=>window.google);
+	new goole.maps.Map(
+		$("#recent-page .map") [0],
+		{
+			center: { lat: -34.397, lng: 150.644 },
+			zoom: 8,
+
+		}
+
+	);
+
+}
 
 const ListPage = async () => {
    let animals = await query({
