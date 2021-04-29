@@ -1,5 +1,23 @@
 /* CSS RESET */
 
+.element.style {
+  border-radius:60%;
+  padding:1.7em;
+  width: 100vw;
+  height: 100vw;
+}
+
+element.style {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(229, 227, 223);
+}
+//*.element.style {
+  border-radius: 60%;
+}*//
 *, *::after, *::before {
    box-sizing:border-box;
 }
@@ -50,13 +68,12 @@ a:hover {
 }
 
 
-/*.img{
+.img{
+ border-radius: 50%;
  width: 85em;
  height: 85em;
  margin: 4em;  
 }*/
-
-
 
 
 /* Layout Classes */
@@ -105,11 +122,6 @@ a:hover {
    position:relative;
    overflow:hidden;
 }
-.element.style{
-  padding:0.7em;
-  width: 100vw;
-  height: 100vw;
-}
 
 .ui-header .ui-title {
    background-color: #cb6a12;
@@ -155,6 +167,7 @@ a:hover {
   }
 
 .img{
+ border-radius:50%;
  width: 250px;
  height:250px;
  align-items: center;
@@ -208,12 +221,12 @@ a:hover {
     color: var(--color-neutral-medium);
 }
 .form-input {
-    width: 100%;
+    width: 95%;
     display: inline-block;
     border: 1px solid #d83939;
-    margin: 0;
+    margin: 0.5;
     padding: 0.5em 1em;
-    border-radius: 3em;
+    border-radius: 2em;
     outline: 0;
     font:inherit;
 }
@@ -233,4 +246,290 @@ a:hover {
 .form-button:hover {
    text-decoration:none;
    background-color:#f2b3b3;
+}
+
+
+/* MODAL */
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity:0;
+    pointer-events:none;
+    transition:all 0.3s;
+}
+.modal.active {
+  opacity:1;
+}
+
+
+.modal-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+.modal.active .modal-back {
+  pointer-events:initial;
+}
+
+
+.modal-popup {
+  position: absolute;
+  width:80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,calc(-50% + 5vh));
+  border-radius:5px;
+  overflow:hidden;
+  transition:all 0.3s;
+}
+.modal.active .modal-popup {
+  transform: translate(-50%,-50%);
+  pointer-events:initial;
+}
+.modal-popup.small {
+  width:initial;
+}
+
+
+
+
+.modal-drawer {
+  position:absolute;
+  display:flex;
+  flex-direction:column;
+  transition: all 0.3s;
+  box-shadow:0 0 5px rgba(0,0,0,0.3);
+}
+.modal-drawer.left,
+.modal-drawer.right {
+  height:100%;
+  width:70vw;
+}
+.modal-drawer.left { left:0; transform:translateX(-100%); }
+.modal-drawer.right { right:0; transform:translateX(100%); }
+
+.modal-drawer.top,
+.modal-drawer.bottom {
+  height:30vh;
+  width:100%;
+}
+.modal-drawer.top { top:0; transform:translateY(-100%); }
+.modal-drawer.bottom { bottom:0; transform:translateY(100%); }
+
+.modal.active .modal-drawer {
+  transform:translate(0);
+  pointer-events:initial;
+}
+
+
+
+.modal-drawer.modal-card {
+  padding:1em;
+  box-shadow:none;
+}
+.modal-card .modal-body {
+  box-shadow:0 0 5px rgba(0,0,0,0.3);
+  border-radius:1em;
+}
+
+
+
+
+.modal-head,
+.modal-foot {
+  background-color:var(--color-neutral-light);
+  padding:0.5em 1em;
+}
+.modal-body {
+  background-color:var(--color-white);
+  flex: 1 1 100%;
+  padding:0.5em 1em;
+  position:relative;
+  overflow:hidden;
+}
+
+
+
+
+
+/* ICONS */
+.icon svg,
+.icon img {
+  width:1em;
+  height:1em;
+  vertical-align: text-bottom;
+}
+
+
+.title-icons .title,
+.title-icons .icon {
+  display:block;
+}
+.title-icons .icon {
+  line-height:calc(var(--header-height)*(2/3));
+  font-size:1.5em;
+}
+.title-icons .title {
+  line-height:calc(var(--header-height)*(1/3));
+  font-size:1em;
+}
+
+
+
+
+/* FLOATERS */
+.floater { position:absolute; }
+.floater.right { right: 0; }
+.floater.left { left: 0; }
+.floater.top { top: 0; }
+.floater.bottom { bottom: 0; }
+
+.floater .icon {
+  padding:1em;
+  display:block;
+}
+
+
+
+
+
+
+.circle-button {
+  display:inline-block;
+  vertical-align:middle;
+  background-color:white;
+  box-shadow:2px 2px 5px rgba(0,0,0,0.2);
+  border-radius:50%;
+  height:var(--header-height);
+  line-height:var(--header-height);
+  width:var(--header-height);
+  text-align:center;
+  font-size:2em;
+}
+
+
+
+
+
+
+/* remove this later */
+.map {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+
+
+
+
+
+
+/* ANIMAL PROFILE PAGE */
+.animal-top {
+  flex:none;
+  height:40vh;
+  background-position:center;
+  background-size:cover;
+}
+.animal-bottom {
+  flex:1 1 100%;
+  position:relative;
+  overflow:hidden;
+}
+.animal-bottom-section {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+.animal-nav {
+  text-align:center;
+}
+
+.animal-nav li {
+  position:relative;
+}
+.animal-nav .active::after {
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:3px;
+  background-color:var(--color-main-medium);
+}
+.animal-bottom-section {
+  display:none;
+}
+.animal-bottom-section.active {
+  display:block;
+}
+
+
+
+.animallist {
+}
+.animallist-item {
+  font-weight:normal;
+  margin: 1em;
+  border-radius: 1em;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+}
+.animallist-image img{
+  width:100px;
+  height:100px;
+  vertical-align: middle;
+}
+.animallist-description {
+  padding:1em;
+}
+.animallist-name {
+  font-size:1.3em;
+}
+
+
+
+
+.animal-image-thumb img {
+  width:6em;
+  height:6em;
+  vertical-align: middle;
+}
+
+
+
+
+
+
+.animal-jump * {
+  pointer-events:none;
+}
+
+
+
+
+
+
+
+
+
+.user-profile-image {
+  text-align: center;
+  padding: 2em;
+}
+.user-profile-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
 }

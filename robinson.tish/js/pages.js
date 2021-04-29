@@ -1,17 +1,47 @@
 
 const RecentPage = async () => {
-	await checkDAta(()=>window.google);
-	new goole.maps.Map(
-		$("#recent-page .map") [0],
-		{
-			center: { lat: -34.397, lng: 150.644 },
-			zoom: 8,
+   let locations = await query({
+      type:'recent_locations',
+      params:[sessionStorage.userId]
+   });
+   console.log(locations)
 
-		}
+   let valid_animals = locations.result.reduce((r,o)=>{
+      o.icon = o.img;
+      if(o.lat && o.lng) r.push(o);
+      return r;
+   },[]);
 
-	);
+   let map_el = await makeMap("#recent-page .map");
+   makeMarkers(map_el,valid_animals);
 
+   map_el.data("markers").forEach((o,i)=>{
+      o.addListener("click",function(){
+
+         /* SIMPLE EXAMPLE */
+         /*sessionStorage.animalId = valid_animals[i].animal_id;
+         $.mobile.navigate("#animal-profile-page");*/
+
+         /* INFOWINDOW EXAMPLE */
+         /*map_el.data("infoWindow")
+            .open(map_el.data("map"),o)
+         map_el.data("infoWindow")
+            .setContent(makeAnimalPopup(valid_animals[i]))*/
+
+         /* ACTIVATE EXAMPLE */
+         $("#recent-drawer")
+            .addClass("active")
+            .find(".modal-body")
+            .html(makeAnimalPopup(valid_animals[i]))
+      })
+   })
 }
+
+
+
+
+
+
 
 const ListPage = async () => {
    let animals = await query({
@@ -28,6 +58,12 @@ const ListPage = async () => {
    $("#list-page .animallist").html(animal_template);
 }
 
+
+
+
+
+
+
 const UserProfilePage = async () => {
    let user = await query({
       type:'user_by_id',
@@ -38,15 +74,77 @@ const UserProfilePage = async () => {
       .html(makeUserProfile(user.result[0]));
 }
 
+const UserEditPage = async () => {
+   let user = await query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   });
+
+   $("#user-edit-form")
+         .html(makeUserProfileUpdateForm(user.result[0]));
+}
+
+const UserPasswordPage = async () => {
+   let user = await query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   });
+
+   $("#user-password-form")
+         .html(makeUserPasswordUpdateForm(user.result[0]));
+}
+
+
+
+
+
+
+
 const AnimalProfilePage = async () => {
-   let r = await query({
+   query({
+      type:'animal_by_id',
+      params:[sessionStorage.animalId]
+   }).then(r=>{
+      let animal = r.result[0];
+      console.log("ANIMAL DATA", animal)
+
+      if(!$("#animal-profile-page .active").length) {
+         $("#animal-profile-page .animal-nav li:first-child").addClass("active")
+         $("#animal-profile-page .animal-bottom-section:first-child").addClass("active")
+      }
+
+      $("#animal-profile-page .animal-top")
+         .css({backgroundImage:`url(${animal.img})`})
+      $("#animal-profile-page .animal-info")
+         .html(makeAnimalInfo(animal));
+   });
+   
+
+   query({
+      type:'locations_by_animal_id',
+      params:[sessionStorage.animalId]
+   }).then(async (r)=>{
+      console.log("ANIMAL LOCATIONS", r.result)
+      let map_el = await makeMap("#animal-profile-page .map");
+      makeMarkers(map_el,r.result)
+   });
+}
+
+const AnimalEditPage = async () => {
+   let animal = await query({
       type:'animal_by_id',
       params:[sessionStorage.animalId]
    });
-   let animal = r.result[0];
-   console.log(animal)
-   $("#animal-profile-page .animal-top")
-      .css({backgroundImage:`url(${animal.img})`})
-   $("#animal-profile-page .animal-info")
-      .html(makeAnimalInfo(animal));
+
+   $("#animal-edit-form")
+         .html(makeAnimalProfileUpdateForm(animal.result[0]));
+}
+
+
+
+
+
+const ChooseLocationPage = async () => {
+   let map_el = await makeMap("#choose-location-page .map");
+   makeMarkers(map_el,[])
 }

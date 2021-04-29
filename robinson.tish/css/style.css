@@ -1,5 +1,12 @@
 /* CSS RESET */
 
+.element.style{
+  border-radius:60%;
+  padding:1.7em;
+  width: 100vw;
+  height: 100vw;
+}
+
 *, *::after, *::before {
    box-sizing:border-box;
 }

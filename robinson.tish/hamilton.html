@@ -11,10 +11,17 @@
    <script src="lib/js/jquery-2.2.4.min.js"></script>
 
    <script src="js/functions.js"></script>
+   <script src="js/maps.js"></script>
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
    <script src="js/signin.js"></script>
    <script src="js/app.js"></script>
+
+   <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxFlGCvrBiz53-c8WDpV4bryeCiEkdNdc&libraries=&v=weekly"
+      async
+    ></script>
+   <!-- AIzaSyCxFlGCvrBiz53-c8WDpV4bryeCiEkdNdc -->
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 </head>
@@ -22,6 +29,8 @@
 
 
    <section data-role="page" id="signin-page">
+   <img src="img/butterflyapplogo.svg" class="butterfly.logo">
+
       <div data-role="main" class="display-flex flex-vertical">
          <div class="flex-stretch"></div>
          <div class="flex-none">
@@ -49,16 +58,7 @@
 
    <section data-role="page" id="recent-page">
       <div data-role="main">
-         <div class="map-icon-test icon" style="position:absolute;left:20vw;top:40vh;font-size:2em" data-activate="#recent-test-modal">
-            <img src="img/icon/marker.svg" alt="">
-         </div>
-
-
-         <div class="modal" id="recent-test-modal">
-            <div class="modal-popup small" data-deactivate="#recent-test-modal">
-               <div class="modal-body">popup</div>
-            </div>
-         </div>
+         <div class="map"></div>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
@@ -174,7 +174,7 @@
                <ul>
                   <li class="flex-none do-touch"><a href="#" data-rel="back">Back</a></li>
                   <li class="flex-stretch"></li>
-                  <li class="flex-none do-touch"><a href="#">Edit</a></li>
+                  <li class="flex-none do-touch"><a href="#animal-edit-page">Edit</a></li>
                </ul>
             </div>
          </div>
@@ -187,6 +187,35 @@
          <div class="animal-bottom">
             <div class="animal-bottom-section animal-map map"></div>
             <div class="animal-bottom-section animal-info"></div>
+         </div>
+      </div>
+   </section>
+
+   <section data-role="page" id="animal-edit-page">
+      <header data-role="header">
+         <h1>Edit Animal</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Cancel</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main" class="display-flex flex-vertical">
+         <div class="overscroll">
+            <form>
+               <div class="form-control">
+                  <label for="animal-edit-name" class="form-label">Name</label>
+                  <input class="form-input" type="text" id="animal-edit-name" data-role="none">
+               </div>
+               <div class="form-control">
+                  <label for="animal-edit-type" class="form-label">Type</label>
+                  <input class="form-input" type="text" id="animal-edit-type" data-role="none">
+               </div>
+               <div class="form-control">
+                  <label for="animal-edit-breed" class="form-label">Breed</label>
+                  <input class="form-input" type="text" id="animal-edit-breed" data-role="none">
+               </div>
+            </form>
          </div>
       </div>
    </section>

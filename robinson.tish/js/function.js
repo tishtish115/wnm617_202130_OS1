@@ -1,3 +1,4 @@
+
 // Promise
 const query = (options) => {
    return fetch('data/api.php',{
@@ -17,7 +18,7 @@ const templater = f => a =>
 const checkData = (exterior_check) => new Promise((resolve,reject)=>{
    let timeout = 0;
    const interior_check = () => {
-      timeout++; if(timeout>10) return reject();
+      timeout++; if(timeout>100) return reject();
       return exterior_check() ? resolve() : setTimeout(interior_check,10);
    }
    interior_check();
