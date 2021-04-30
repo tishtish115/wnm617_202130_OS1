@@ -7,10 +7,10 @@ const makeMap = async (target,center={lat: 37.735078,lng: -122.436844}) =>
 
    // map = map_el.data("map");
 
-   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
+   //map = new google.maps.Map(document.getElementById("map"), {
+    //center: { lat: -34.397, lng: 150.644 },
+    //zoom: 8,
+  //});
 
    if(!map_el.data("map")) map_el.data({
       "map": new google.maps.Map
