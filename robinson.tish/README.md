@@ -5,13 +5,8 @@
 ### Important Links
 
 - http://anotherluvdesign.site
-<<<<<<< HEAD
-- http://anotherluvdesign.site/aau/wnm617/robinson.tish
-- http://anotherluvdesign.site/aau/wnm617/robinson.tish/initializr/index.html
-=======
-http://anotherluvdesign.site/aau/wnm617/robinson.tish
-http://anotherluvdesign.site/aau/wnm617/robinson.tish/initializr/index.html
->>>>>>> 2b6997009af272432949fe0746323b13ea45f6a9
+- http://anotherluvdesign.site/robinson.tish/
+- http://anotherluvdesign.site/robinson.tish/initializr/index.html
 
 ### Git Notes
 
