@@ -15,7 +15,7 @@
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
    
-   <script src="js/functions.js"></script>
+   <script src="js/function.js"></script>
    <script src="js/maps.js"></script>
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
@@ -28,11 +28,14 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCW8OPv4Ii0ZNnkujPqf2kljX2KU9S3Law&libraries=&v=weekly"
       async
     ></script>
- 
-      <!-AIzaSyCW8OPv4Ii0ZNnkujPqf2kljX2KU9S3Law-->
+   <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN7R837QS1Lka-7e_sfebb1MEA0IIZtGo&libraries=&v=weekly"
+      async></script>-->
 
 
- <!--<script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/44/11a/common.js"></script>-->
+  <!--AIzaSyCW8OPv4Ii0ZNnkujPqf2kljX2KU9S3Law-->
+ <!--AIzaSyDN7R837QS1Lka-7e_sfebb1MEA0IIZtGo-->
+
+ <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/44/11a/common.js"></script>
 
  <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
@@ -117,7 +120,7 @@
                   <input class="form-input" type="text" id="signup-second-name" data-role="none" placeholder="What is Your Real Name?">
                </div>
                <div class="form-control">
-                  <input type="submit" class="form-button" value="Finish" data-role="none">
+                  <input type="submit" class="form-button" value="Finish Up" data-role="none">
                </div>
             </form>
          </div>
@@ -128,12 +131,12 @@
 
 
 
-      <!--RECENT PAGE-->
+
 
    <section data-role="page" id="recent-page">
       <div data-role="main">
          <div class="map"></div>
-          <!--<img src="img/map.png" class="alt">-->
+          <img src="img/map.png" class="alt">
          <div class="floater bottom right" style="padding:1em">
             <a href="#choose-animal-page" class="circle-button">&plus;</a>
          </div>
@@ -151,7 +154,7 @@
 
 
 
-   <!--List Page-->
+
 
    <section data-role="page" id="list-page">
       <header data-role="header">
@@ -162,36 +165,8 @@
                data-activate="#list-add-modal">&plus;</a></li>
          </ul>
       </header>
-      <div data-role="main">
-         <div class="overscroll">
-         <div class="animallist">
-      <div class="animallist-item display-flex animal-jump" data-id="5">
-   <div class="flex-none animallist-image">
-       <img src="https://via.placeholder.com/400/823/fff/?text=Keeg" alt=""></div>
-   <div class="animallist-description flex-stretch">
-      <div class="animallist-name">Sparkle</div>
-      <div class="animallist-info">butterfly, Black swallowtail</div>
-   </div>
-   
-</div>
-         <div class="animallist-item display-flex animal-jump" data-id="3">
-   <div class="flex-none animallist-image">
-      <img src="https://via.placeholder.com/400/860/fff/?text=swallowtail"  alt=""></div>
-      <!--<span><img src="img/blkswallowtail.svg" style="width: 3em; height: 4em; right: 7% top: 25%;"> </span>-->
-   <div class="animallist-description flex-stretch">
-      <div class="animallist-name">Sparkle</div>
-      <div class="animallist-info">
-            <p>Name: <span>Gology</span></p></div>
-               <p>Type: <span>Butterfly</span></p>
-            <p>Breed: <span>Black Swallowtail</span></p>
-            
-            </div>
-   
-   </div>
-
-   
-</div>
-         </div>
+      <div data-role="main"><div class="overscroll">
+         <div class="animallist"></div>
       </div></div>
       <footer data-role="footer" data-template="#footer-template"></footer>
 
@@ -232,17 +207,18 @@
 
 
 
+
+
+
    <!-- USER DATA SECTION -->
 
    <section data-role="page" id="user-profile-page">
       <div data-role="main">
          <div class="profile"></div>
-      <img src="https://via.placeholder.com/400/731/fff/?text=USER2" alt>
-     
 
-         <!--<div class="floater top right">
-            <a href="#" class="icon" data-activate="#user-settings-modal"><img src="img/vertellipse.svg" alt=""></a>
-         </div>-->
+         <div class="floater top right">
+            <a href="#" class="icon" data-activate="#user-settings-modal"><img src="img/icon/shishkabob.svg" alt=""></a>
+         </div>
 
 
          <div class="modal" id="user-settings-modal">
@@ -424,15 +400,15 @@
    <script type="text/template" id="footer-template">
    <ul class="title-icons">
       <li><a href="#recent-page">
-         <span class="icon"><img src="img/map4.30.svg" alt=""></span>
+         <span class="icon"><img src="img/icon/map.svg" alt=""></span>
          <span class="title">Recent</span>
       </a></li>
       <li><a href="#list-page">
-         <span class="icon"><img src="img/list.svg" alt=""></span>
+         <span class="icon"><img src="img/icon/list.svg" alt=""></span>
          <span class="title">List</span>
       </a></li>
       <li><a href="#user-profile-page">
-         <span class="icon"><img src="img/blkprofile.svg" alt=""></span>
+         <span class="icon"><img src="img/icon/profile.svg" alt=""></span>
          <span class="title">Profile</span>
       </a></li>
    </ul>

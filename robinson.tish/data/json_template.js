@@ -45,12 +45,12 @@
     
     name: '{{company()}}',
     
-    type: '{{random("dog","buterfly","horse")}}',
+    type: '{{random("dogs","butterflies","horses")}}',
     breed: function(tags) {
       var breeds = {
-        dog:["yokshire terrier","german sheperd","labrador retriever"],
-        buterfly:["monarch","black swallowtail","Limenitis arthemis"],
-        horse:["orlov trotter","andalusian","campolina"]
+        dogs:["yokshire terrier","german sheperd","labrador retriever"],
+        butterflies:["monarch","black swallowtail","Limenitis arthemis"],
+        horses:["orlov trotter","andalusian","campolina"]
       };
       var chosen_type = breeds[this.type];
       var chosen_index = tags.integer(0,chosen_type.length-1);

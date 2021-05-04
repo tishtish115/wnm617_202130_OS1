@@ -1,20 +1,14 @@
 
-const makeMap = async (target,center={lat: 37.735078,lng: -122.436844}) => 
-   {
+const makeMap = async (target,center={lat: 37.735078,lng: -122.436844}) => {
    await checkData(()=>window.google);
 
    let map_el = $(target);
 
    // map = map_el.data("map");
 
-   //map = new google.maps.Map(document.getElementById("map"), {
-    //center: { lat: -34.397, lng: 150.644 },
-    //zoom: 8,
-  //});
-
    if(!map_el.data("map")) map_el.data({
-      "map": new google.maps.Map
-      (map_el[0],
+      "map": new google.maps.Map(
+         map_el[0],
          {
             center: center,
             zoom: 12,

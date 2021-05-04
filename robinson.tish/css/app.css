@@ -4,6 +4,13 @@
    box-sizing:border-box;
 }
 
+.element.style {
+  border-radius:60%;
+  padding:1.7em;
+  width: 100vw;
+  height: 100vw;
+}
+
 :root {
    --font-sans:Helvetica, Arial, sans-serif;
    --font-serif:Cambria, Georgia, serif;
@@ -324,8 +331,8 @@ a:hover {
 /* ICONS */
 .icon svg,
 .icon img {
-  width:1em;
-  height:1em;
+  width:1.5em;
+  height:1.5em;
   vertical-align: text-bottom;
 }
 
@@ -340,7 +347,7 @@ a:hover {
 }
 .title-icons .title {
   line-height:calc(var(--header-height)*(1/3));
-  font-size:0.7em;
+  font-size:1.2em;
 }
 
 
@@ -489,10 +496,13 @@ a:hover {
 
 .user-profile-image {
   text-align: center;
+  width: 100%;
+  height: 100%;
+  border-radius:50%;
   padding: 2em;
 }
 .user-profile-image img {
   width: 100%;
   height: 100%;
-  border-radius: 100%;
+  border-radius: 50%;
 }

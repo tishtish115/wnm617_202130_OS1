@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Butterfly Tracker</title>
+
+   <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+  
+   
+   <link rel="stylesheet" href="css/app.css">
+   <!--<link rel="stylesheet" href="css/style.css">-->
+
+
+   <script src="lib/js/jquery-2.2.4.min.js"></script>
+   
+   <script src="js/functions.js"></script>
+   <script src="js/maps.js"></script>
+   <script src="js/pages.js"></script>
+   <script src="js/parts.js"></script>
+   <script src="js/signin.js"></script>
+   <script src="js/app.js"></script>
+    
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- jsFiddle will insert css and js -->
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+
+  </body>
+</html>
