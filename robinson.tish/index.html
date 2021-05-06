@@ -151,7 +151,7 @@
 
 
 
-   <!--List Page-->
+   <!--List Page (COMPARE MY LIST PAGE TO HS LIST PAGE. FIGURE OUT HOW TO ADD THE ANIMALS-->
 
    <section data-role="page" id="list-page">
       <header data-role="header">
@@ -174,9 +174,9 @@
    </div>
    
 </div>
-         <div class="animallist-item display-flex animal-jump" data-id="3">
+      <div class="animallist-item display-flex animal-jump" data-id="3">
    <div class="flex-none animallist-image">
-      <img src="https://via.placeholder.com/400/860/fff/?text=swallowtail"  alt=""></div>
+   <img src="https://via.placeholder.com/400/860/fff/?text=swallowtail"  alt=""></div>
       <!--<span><img src="img/blkswallowtail.svg" style="width: 3em; height: 4em; right: 7% top: 25%;"> </span>-->
    <div class="animallist-description flex-stretch">
       <div class="animallist-name">Sparkle</div>
@@ -184,14 +184,10 @@
             <p>Name: <span>Gology</span></p></div>
                <p>Type: <span>Butterfly</span></p>
             <p>Breed: <span>Black Swallowtail</span></p>
-            
-            </div>
-   
+          </div>
+       </div>
+    </div>
    </div>
-
-   
-</div>
-         </div>
       </div></div>
       <footer data-role="footer" data-template="#footer-template"></footer>
 
@@ -199,7 +195,8 @@
 
 
       <div class="modal" id="list-add-modal">
-         <div class="modal-back" data-deactivate="#list-add-modal"></div>
+         <div class="modal-back" data-deactivate="
+         #list-add-modal"></div>
          <form class="modal-popup" data-ajax="false" id="list-add-form">
             <div class="modal-head">Head</div>
             <div class="modal-body">
@@ -238,7 +235,9 @@
       <div data-role="main">
          <div class="profile"></div>
       <img src="https://via.placeholder.com/400/731/fff/?text=USER2" alt>
-     
+     <div class="floater top right">
+            <a href="#" class="icon" data-activate="#user-settings-modal"><img src="img/vertellipse.svg" alt=""></a>
+         </div>
 
          <!--<div class="floater top right">
             <a href="#" class="icon" data-activate="#user-settings-modal"><img src="img/vertellipse.svg" alt=""></a>
@@ -266,13 +265,14 @@
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
 
-   <section data-role="page" id="user-edit-page">
+   
+  <section data-role="page" id="user-edit-page">
       <header data-role="header">
          <h1>Edit Your Info</h1>
          <ul>
             <li><a href="#" data-rel="back">Cancel</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" data-rel="back">Save</a></li>
+            <li><a href="#" class="user-edit-submit">Save</a></li>
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-vertical">
@@ -288,7 +288,7 @@
          <ul>
             <li><a href="#" data-rel="back">Cancel</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" data-rel="back">Save</a></li>
+            <li><a href="#" class="user-password-submit">Save</a></li>
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-vertical">
@@ -343,7 +343,7 @@
          <ul>
             <li><a href="#" data-rel="back">Cancel</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" data-rel="back">Save</a></li>
+            <li><a href="#" class="animal-edit-submit">Save</a></li>
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-vertical">
@@ -353,14 +353,30 @@
       </div>
    </section>
 
+   <section data-role="page" id="animal-add-page">
+      <header data-role="header">
+         <h1>Add Animal</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Cancel</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="animal-add-submit">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main" class="display-flex flex-vertical">
+         <div class="overscroll">
+            <form id="animal-add-form" data-ajax="false" style="padding:1em">
+               <input type='hidden' id='animal-add-location'>
+               <div class="form-elements"></div>
+            </form>
+         </div>
+      </div>
+   </section>
 
 
 
 
 
-
-
-   <!-- CHOOSE LOCATION PAGES -->
+      <!-- CHOOSE LOCATION PAGES -->
    <section data-role="page" id="choose-animal-page">
       <header data-role="header">
          <h1>Choose Animal</h1>
@@ -372,9 +388,16 @@
       </header>
       <div data-role="main" class="display-flex flex-vertical">
          <div class="overscroll">
-            <form>
-               <div>Create New Animal</div>
-               <div>Choose Animal</div>
+            <form style="padding:1em">
+               <div>
+                  <a href="#animal-add-page" class="form-button">Create New Animal</a>
+               </div>
+               <p style="text-align:center">Or Choose Animal Below</p>
+               <div class="animal-choices">
+                  <div class='form-select'>
+                     <select id="location-choose-animal" data-role="none"></select>
+                  </div>
+               </div>
             </form>
          </div>
       </div>
@@ -390,6 +413,8 @@
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-vertical">
+         <input type="hidden" id="location-lat">
+         <input type="hidden" id="location-lng">
          <div class="map"></div>
       </div>
    </section>
@@ -400,12 +425,13 @@
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-add-location">Save</a></li>
+            <li><a href="#" class="location-add-submit">Save</a></li>
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-vertical">
          <div class="overscroll">
             <form style="padding:1em">
+               <input type="hidden" id="location-redirect">
                <div class="form-control">
                   <textarea name="location-description" id="location-description" rows="10" class="form-input" data-role="none"></textarea>
                </div>
@@ -420,6 +446,8 @@
 
 
 
+
+         <!--FOOTER-->
 
    <script type="text/template" id="footer-template">
    <ul class="title-icons">
