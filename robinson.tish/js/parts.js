@@ -166,4 +166,33 @@ ${FormControlInput({
    placeholder:'Type Your New Password Again',
    value:''
 })}
-`
+
+
+
+
+
+
+const makeAnimalListSet = (animals,missing_text="") => {
+   animal_template = animals.length?
+      makeAnimalList(animals):
+      `<div class="animallist-item"><div class="animallist-description">${missing_text}</div></div>`
+
+   $("#list-page .animallist").html(animal_template);
+}
+
+const capitalize = s => s[0].toUpperCase()+s.substr(1);
+
+const filterList = (animals,type) => {
+   let a = [...(new Set(animals.map(o=>o[type])))];
+   return templater(o=>o?`<li class="filter" data-field="${type}" data-value="${o}">${capitalize(o)}</li>`:'')(a);
+}
+
+const makeFilterList = (animals) => {
+   return `
+   <li class="filter" data-field="type" data-value="">All</li>
+   |
+   ${filterList(animals,'type')}
+   |
+   ${filterList(animals,'breed')}
+   `
+}

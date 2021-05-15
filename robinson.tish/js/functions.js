@@ -7,6 +7,18 @@ const query = (options) => {
    }).then(d=>d.json());
 }
 
+const checkUpload = (file) => {
+   let fd = new FormData();
+   fd.append("image",file);
+
+   return fetch ('data/api.php',{
+      method:'POST',
+      body:fd
+   }) .then(d=>d.json());
+}
+
+
+
 
 // Curried function
 const templater = f => a =>

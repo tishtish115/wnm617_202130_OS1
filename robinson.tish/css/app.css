@@ -4,7 +4,7 @@
    box-sizing:border-box;
 }
 
-.element.style {
+element.style {
   border-radius:60%;
   padding:1.7em;
   width: 100vw;
@@ -184,10 +184,11 @@ a:hover {
 .form-input {
     width: 100%;
     display: inline-block;
-    border: 1px solid var(--color-neutral-medium);
+    border: 1px solid; /*var(--color-neutral-medium);*/
+    border-color: #ed1c24; 
     margin: 0;
     padding: 0.5em 1em;
-    border-radius: 0.3em;
+    border-radius: 0.5em;
     outline: 0;
     font:inherit;
 }
@@ -196,7 +197,7 @@ a:hover {
     padding: 0.5em 1em;
     border-radius: 0.3em;
     border-width:0;
-    background-color:var(--color-neutral-light);
+    background-color:#ed1c24; //*var(--color-neutral-light);*//
     outline: 0;
     width: 100%;
     display: inline-block;
@@ -209,8 +210,53 @@ a:hover {
    background-color:var(--color-neutral-medium);
 }
 
-
-
+.form-select {
+   position: relative;
+}
+.form-select>select {
+   display:inline-block;
+   width:100%;
+   border-width:0;
+   background-color:var(--color-neutral-light);
+   padding:0.5em 2em 0.5em 1em;
+   border-radius:0.3em;
+   font:inherit;
+   outline:0;
+   position:relative;
+   overflow:hidden;
+   -webkit-appearance:none;
+}
+.form-select::after {
+   position:absolute;
+   top:50%;
+   right:0.5em;
+   content:'▼';
+   font-family:arial;
+   font-size:0.9em;
+   color:var(--color-neutral-dark);
+   pointer-events:none;
+   transform: translateY(-50%);
+}
+.hotdog {
+    display: inline-flex;
+    width: 100%;
+    border-width: 0;
+    background-color: var(--color-neutral-light);
+    border-radius: 2em;
+}
+.hotdog>input {
+    flex: 1;
+    background-color: transparent;
+    border-width: 0;
+    line-height: 2.5;
+    padding: 0 1em;
+    outline: 0;
+    font-size: inherit;
+}
+.hotdog.hovering {
+    background-color:var(--color-white);
+    box-shadow:1px 0 5px rgba(0,0,0,0.2)
+}
 
 
 

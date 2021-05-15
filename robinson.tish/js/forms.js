@@ -1,7 +1,4 @@
 
-   /*Change to match your own*/
-
-
 const checkSignupForm = () => {
    let email = $("#signup-email").val();
    let password = $("#signup-password").val();
@@ -135,6 +132,81 @@ const checkLocationAddForm = () => {
       if(d.error) {
          throw d.error;
       }
+      window.history.go(+$("#location-redirect").val());
+   })
+}
+
+
+
+
+
+
+const checkUserUploadForm = () => {
+   let upload = $("#user-upload-image").val();
+   if(upload=="") return;
+
+   query({
+      type:'update_user_image',
+      params:[upload,sessionStorage.userId]
+   }).then(d=>{
+      if(d.error) {
+         throw d.error;
+      }
       window.history.go(-1);
    })
+}
+
+
+
+
+
+
+const checkAnimalDelete = (id) => {
+   query({
+      type:'delete_animal',
+      params:[id]
+   }).then(d=>{
+      if(d.error) {
+         throw d.error;
+      }
+      window.history.go(-1);
+   })
+}
+
+
+
+
+const checkSearchForm = async () => {
+   let search = $("#list-search-value").val();
+   
+   let animals = await query({
+      type:'search_animals',
+      params:[search,sessionStorage.userId]
+   });
+
+   makeAnimalListSet(
+      animals.result,
+      "No results found."
+   );
+}
+const checkRecentSearchForm = async () => {
+   let search = $("#recent-search-value").val();
+   console.log(search)
+}
+
+
+
+// destructuring
+const checkListFilter = async ({field,value}) => {
+   let animals = value=="" ?
+      await query({
+         type:'animals_by_user_id',
+         params:[sessionStorage.userId]
+      }) :
+      await query({
+         type:'filter_animals',
+         params:[field,value,sessionStorage.userId]
+      });
+
+   makeAnimalListSet(animals.result,"No animals found");
 }

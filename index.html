@@ -140,6 +140,11 @@
          <div class="floater bottom right" style="padding:1em">
             <a href="#choose-animal-page" class="circle-button">&plus;</a>
          </div>
+   <div class="floater top left" style="width:100%;padding:1em">
+      <form data-ajax="false" id="recent-search" class="hotdog hovering">
+         <input type="search" id="recent-search-value" data-role="none" placeholder="Search">
+      </form>
+   </div>
 
          <div class="modal" id="recent-drawer">
             <div class="modal-drawer modal-card top">
@@ -160,12 +165,21 @@
       <header data-role="header">
          <h1>Search</h1>
          <ul>
-            <li class="flex-stretch"></li>
-            <li><a href="#" class="js-list-add-animal"
-               data-activate="#list-add-modal">&plus;</a></li>
+            <li class="flex-stretch" style="padding-left:0.5em"></li>
+            <form data-ajax="false" id="list search" class="hotdog"></form>
+      <input type="search" id="list-search-value" data-role="none" placeholder="Search"></form>
+      <li><a href="#animal-add-page" style="font-size:1.5em">&plus;</a></li>  
          </ul>
       </header>
+      <header data-role="header">
+         <ul class="filter-set"></ul>
+      </header>
+
       <div data-role="main"><div class="overscroll">
+         <div class="animallist"></div>
+      </div></div>
+         
+         <div class="overscroll">
          <div class="animallist"></div>
       </div></div>
       <footer data-role="footer" data-template="#footer-template"></footer>
@@ -205,11 +219,6 @@
 
 
 
-
-
-
-
-
    <!-- USER DATA SECTION -->
 
    <section data-role="page" id="user-profile-page">
@@ -217,7 +226,7 @@
          <div class="profile"></div>
 
          <div class="floater top right">
-            <a href="#" class="icon" data-activate="#user-settings-modal"><img src="img/icon/shishkabob.svg" alt=""></a>
+            <a href="#" class="icon" data-activate="#user-settings-modal"><img src="img/vertellipse.svg" alt=""></a>
          </div>
 
 
@@ -328,7 +337,6 @@
          </div>
       </div>
    </section>
-
 
 
 
