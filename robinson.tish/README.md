@@ -7,7 +7,7 @@
 - http://anotherluvdesign.site
 - http://anotherluvdesign.site/aau/wnm617/robinson.tish/#signin-page
 - http://anotherluvdesign.site/robinson.tish/initializr/index.html
-- http://anotherluvdesign.site/aau/wnm617/robinson.tish/#signin-page
+
 
 ### Git Notes
 
