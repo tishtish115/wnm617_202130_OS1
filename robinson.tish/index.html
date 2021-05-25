@@ -6,9 +6,14 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Butterfly Tracker</title>
 
+<!--<link rel="apple-touch-icon" href="logo_icon.png">
+   <link rel="icon" href="logo_icon.png">-->
+
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-status-bar-style" content="#52B28B">
+
+
    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
-  
-   
    <link rel="stylesheet" href="css/app.css">
    <!--<link rel="stylesheet" href="css/style.css">-->
 
@@ -35,7 +40,6 @@
  <!--<script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/44/11a/common.js"></script>-->
 
  <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
-
 </head>
 <body>
 
@@ -135,8 +139,15 @@
          <div class="map"></div>
           <!--<img src="img/map.png" class="alt">-->
          <div class="floater bottom right" style="padding:1em">
-            <a href="#choose-animal-page" class="circle-button">&plus;</a>
+            <a href="#choose-animal-page" class="circle-button js-add-form-recent">&plus;</a>
          </div>
+
+         <div class="floater top left" style="width:100%;padding:1em">
+            <form data-ajax="false" id="recent-search" class="hotdog hovering">
+               <input type="search" id="recent-search-value" data-role="none" placeholder="Search">
+            </form>
+         </div>
+
 
          <div class="modal" id="recent-drawer">
             <div class="modal-drawer modal-card top">
@@ -158,13 +169,20 @@
          <h1>Search</h1>
          <ul>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-list-add-animal"
-               data-activate="#list-add-modal">&plus;</a></li>
+            <li><a href="#animal-add-page">&plus;</a></li> 
+            <li class="flex-stretch" style="padding-left:0.5em">
+         <form data-ajax="false" id="list-search" class="hotdog">
+            <input type="search" id="list-search-value" data-role="none" placeholder="Search"></form>
+         </li>
+              <li><a href="#animal-add-page" style="font-size:1.5em">&plus;</a></li>
          </ul>
+      </header>
+      <header data-role="header">
+         <ul class="filter-set"></ul>
       </header>
       <div data-role="main">
          <div class="overscroll">
-         <div class="animallist">
+         <div class="animallist"></div></div></div>
       <div class="animallist-item display-flex animal-jump" data-id="5">
    <div class="flex-none animallist-image">
        <img src="https://via.placeholder.com/400/823/fff/?text=Keeg" alt=""></div>
@@ -234,9 +252,16 @@
    <section data-role="page" id="user-profile-page">
       <div data-role="main">
          <div class="profile"></div>
-      <img src="https://via.placeholder.com/400/731/fff/?text=USER2" alt>
+     <img src="https://via.placeholder.com/400/731/fff/?text=USER2" alt>
+  <div>
+      <i class="icon-swap map-icon"></i>
+      <div class="sploofactive">
+      <i class="icon-swap map-icon"></i>
+   </div>
+
+
      <div class="floater top right">
-            <a href="#" class="icon" data-activate="#user-settings-modal"><img src="img/vertellipse.svg" alt=""></a>
+       <a href="#" class="icon" data-activate="#user-settings-modal"><img src="img/blkswallowtail.png" alt=""></a>
          </div>
 
          <!--<div class="floater top right">
@@ -294,6 +319,32 @@
       <div data-role="main" class="display-flex flex-vertical">
          <div class="overscroll">
             <form id="user-password-form" data-ajax="false" style="padding:1em"></form>
+         </div>
+      </div>
+   </section>
+
+   <section data-role="page" id="user-upload-page">
+      <header data-role="header">
+         <h1>Upload Photo</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Cancel</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="user-upload-submit">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main" class="display-flex flex-vertical">
+         <div class="overscroll">
+            <form id="user-upload-form" data-ajax="false" style="padding:1em">
+               <input type="hidden" id="user-upload-image">
+               <label class="image-uploader-full">
+               <label>
+                  <input type="file" data-role="none" id="user-upload-input">
+               </label>
+            <label for="user-upload-input" class="floater bottom left">
+                  <!--<img src="img/blkswallowtail.svg" alt="" class="icon">-->
+                  <img src="https://via.placeholder.com/400/823/fff/?text=Keeg" alt="">
+               </label>
+            </form>
          </div>
       </div>
    </section>
@@ -437,10 +488,8 @@
                </div>
             </form>
          </div>
-      </div>
+      </diwidth=2emv>
    </section>
-
-
 
 
 
@@ -452,8 +501,8 @@
    <script type="text/template" id="footer-template">
    <ul class="title-icons">
       <li><a href="#recent-page">
-         <span class="icon"><img src="img/map4.30.svg" alt=""></span>
-         <span class="title">Recent</span>
+         <span class="icon"><img src="img/map5.17.svg" alt="width=2em"></span>
+         <!--<span class="title">Recent</span>-->
       </a></li>
       <li><a href="#list-page">
          <span class="icon"><img src="img/list.svg" alt=""></span>

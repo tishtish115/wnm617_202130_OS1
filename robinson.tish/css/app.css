@@ -36,7 +36,9 @@ body {
    font-family:var(--font-sans);
 }
 
-h1,
+h1,//*.ui-title {
+  height: 10px;  
+}*//
 h2,
 h3,
 h4,
@@ -237,6 +239,8 @@ a:hover {
    pointer-events:none;
    transform: translateY(-50%);
 }
+
+
 .hotdog {
     display: inline-flex;
     width: 100%;
@@ -258,8 +262,15 @@ a:hover {
     box-shadow:1px 0 5px rgba(0,0,0,0.2)
 }
 
+@@ -465,6 +484,9 @@ a:hover {
+.animal-bottom-section.active {
+  display:block;
+}
+.animal-info {
+  padding:1em;
+}
 
-
+@@ -516,11 +538,46 @@ a:hover {
 
 /* MODAL */
 .modal {
@@ -369,16 +380,11 @@ a:hover {
 
 
 
-
-
-
-
-
 /* ICONS */
 .icon svg,
 .icon img {
-  width:1.5em;
-  height:1.5em;
+  width:1em;
+  height:1em;
   vertical-align: text-bottom;
 }
 
@@ -518,13 +524,10 @@ a:hover {
 
 
 .animal-image-thumb img {
-  width:6em;
-  height:6em;
+  width:3em;
+  height:3em;
   vertical-align: middle;
 }
-
-
-
 
 
 
@@ -533,9 +536,12 @@ a:hover {
 }
 
 
-
-
-
+.ui-mobile a img, 
+.ui-mobile fieldset {
+  width: 50px;
+  height:50px;
+  border-width: 0;
+}
 
 
 
@@ -546,9 +552,53 @@ a:hover {
   height: 100%;
   border-radius:50%;
   padding: 2em;
+  position: relative;
+  overflow:hidden;
+}
+.user-profile-image>img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position:absolute;
+  left:0;
+  top:0;
+  object-fit: cover;
+  padding:2em;
+}
+
+
+.image-uploader.full {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-position:center;
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+.image-uploader.full input{
+  display:none;
+}
+
+
+
+.filter-set {
+  overflow:auto;
 }
 .user-profile-image img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 100%;
+.filter {
+  font-weight:bold;
+  padding:0 0.5em;
 }
+
+
+
+
+
+
+
+

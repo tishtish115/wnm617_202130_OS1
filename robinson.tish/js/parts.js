@@ -14,6 +14,12 @@ const makeAnimalList = templater(o=>`
 const makeUserProfile = o => `
 <div class="user-profile-image">
    <img src="${o.img}" alt="">
+
+   <div class="floater bottom right">
+   <a href="#" class="icon" 
+   data-activate="#user-upload-page" class="icon">
+   <img src="img/pencil.svg" alt=""></a>
+</div>
 </div>
 <div class="user-profile-description">
    <div class="user-profile-name">${o.name}</div>
@@ -110,7 +116,7 @@ ${FormControlTextarea({
    placeholder:'Type The Animal Description',
    value:o.description
 })}
-`
+`;
 
 
 
@@ -139,7 +145,7 @@ ${FormControlInput({
    placeholder:'Type Your Email',
    value:o.email
 })}
-`
+`;
 
 const makeUserPasswordUpdateForm = o => `
 ${FormControlInput({
@@ -166,7 +172,7 @@ ${FormControlInput({
    placeholder:'Type Your New Password Again',
    value:''
 })}
-
+`;
 
 
 

@@ -19,7 +19,6 @@ function fetchAll($r) {
    return $a;
 }
 
-
 // connection, prepared statement, parameters
 function makeQuery($c,$ps,$p,$makeResults=true) {
    try {
@@ -190,6 +189,7 @@ function makeStatement($data) {
             `username` = ?,
             `name` = ?,
             `email` = ?
+            //*should there be more; phone number; weight, height, d.o.b.?*// 
             WHERE `id` = ?
             ",$p,false);
          return ["result"=>"success"];

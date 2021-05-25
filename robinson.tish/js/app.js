@@ -33,7 +33,8 @@ $(()=>{
 
    /* FORM SUBMITS */
    .on("submit","#signin-form",function(e){
-      e.preventDefault();
+      e.preventDefau
+      lt();
       checkSigninForm();
    })
    .on("submit","#signup-form",function(e){
@@ -44,6 +45,14 @@ $(()=>{
       e.preventDefault();
       checkSignupSecondForm();
    })
+   .on("submit","#list-search",function(e){
+      e.preventDefault();
+      checkSearchForm();
+   })
+   .on("submit","#recent-search",function(e){
+      e.preventDefault();
+      checkRecentSearchForm();
+   })
 
    .on("change",".image-uploader input",function(e){
       checkUpload(this.files[0])
@@ -53,6 +62,24 @@ $(()=>{
          $(".image-uploader").css({
             "background-image":`url(uploads/${d.result})`
          });
+      })
+   })
+
+   .on("change","#animal-update-image-input",function(e){
+      checkUpload(this.files[0])
+      .then(d=>{
+         console.log(d)
+         let image_location = 'uploads/'+d.result;
+         query({
+            type:'update_animal_image',
+            params:[image_location,sessionStorage.animalId]
+         }).then(d=>{
+            if(d.error) {
+               throw d.error;
+            }
+            $("#animal-profile-page .animal-top")
+               .css({"background-image":`url(${image_location})`})
+         })
       })
    })
 
